@@ -1,0 +1,29 @@
+Downloading BEIR SciFact...
+corpus=5,183 queries=300
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4829.18it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 4494.51it/s]
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 4504.05it/s]
+BM25                                                    nDCG@10=0.6429 R@100=0.8659 8.9 ms/q
+Dense: MiniLM-L6                                        nDCG@10=0.6479 R@100=0.9283 5.1 ms/q
+Dense: BGE-small                                        nDCG@10=0.7077 R@100=0.9433 12.3 ms/q
+Hybrid RRF (BM25 + BGE-small)                           nDCG@10=0.6839 R@100=0.9650 21.5 ms/q
+Hybrid RRF (BM25 + BGE-small) + cross-encoder rerank    nDCG@10=0.6891 R@100=0.9650 5199.4 ms/q
+{
+  "n_docs": 5183,
+  "n_queries": 300,
+  "best": "Dense: BGE-small",
+  "best_vs_bm25_ndcg10": {
+    "mean_diff": 0.0648,
+    "ci95": [
+      0.0268,
+      0.101
+    ]
+  },
+  "per_query_bm25_vs_dense": {
+    "dense": "Dense: BGE-small",
+    "dense_better": 90,
+    "bm25_better": 51,
+    "tie": 159
+  }
+}

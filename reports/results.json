@@ -1,0 +1,75 @@
+{
+  "n_docs": 5183,
+  "n_queries": 300,
+  "best": "Dense: BGE-small",
+  "best_vs_bm25_ndcg10": {
+    "mean_diff": 0.0648,
+    "ci95": [
+      0.0268,
+      0.101
+    ]
+  },
+  "per_query_bm25_vs_dense": {
+    "dense": "Dense: BGE-small",
+    "dense_better": 90,
+    "bm25_better": 51,
+    "tie": 159
+  },
+  "results": [
+    {
+      "retriever": "BM25",
+      "ndcg@10": 0.6429,
+      "mrr@10": 0.6069,
+      "recall@1": 0.5042,
+      "recall@5": 0.7028,
+      "recall@10": 0.7732,
+      "recall@100": 0.8659,
+      "latency_ms_per_query": 8.89,
+      "index_seconds": 0.5
+    },
+    {
+      "retriever": "Dense: MiniLM-L6",
+      "ndcg@10": 0.6479,
+      "mrr@10": 0.6055,
+      "recall@1": 0.4846,
+      "recall@5": 0.7379,
+      "recall@10": 0.79,
+      "recall@100": 0.9283,
+      "latency_ms_per_query": 5.07,
+      "index_seconds": 222.4
+    },
+    {
+      "retriever": "Dense: BGE-small",
+      "ndcg@10": 0.7077,
+      "mrr@10": 0.6758,
+      "recall@1": 0.5649,
+      "recall@5": 0.7633,
+      "recall@10": 0.8362,
+      "recall@100": 0.9433,
+      "latency_ms_per_query": 12.3,
+      "index_seconds": 824.6
+    },
+    {
+      "retriever": "Hybrid RRF (BM25 + BGE-small)",
+      "ndcg@10": 0.6839,
+      "mrr@10": 0.6499,
+      "recall@1": 0.5382,
+      "recall@5": 0.7492,
+      "recall@10": 0.8001,
+      "recall@100": 0.965,
+      "latency_ms_per_query": 21.47,
+      "index_seconds": 0.0
+    },
+    {
+      "retriever": "Hybrid RRF (BM25 + BGE-small) + cross-encoder rerank",
+      "ndcg@10": 0.6891,
+      "mrr@10": 0.6567,
+      "recall@1": 0.5453,
+      "recall@5": 0.7418,
+      "recall@10": 0.8156,
+      "recall@100": 0.965,
+      "latency_ms_per_query": 5199.43,
+      "index_seconds": 0.0
+    }
+  ]
+}
